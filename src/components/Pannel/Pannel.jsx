@@ -18,8 +18,11 @@ const Pannel = () => {
 
   const getWeekOfYear = (date) => {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+
     const dayOfWeek = firstDayOfYear.getDay();
+
     const firstDayOfWeek = firstDayOfYear.getTime() - dayOfWeek * 86400000;
+
     const weekOfYear = Math.floor(
       ((dayOfYear - 1) * 86400000 + (date.getTime() - firstDayOfWeek)) /
         604800000

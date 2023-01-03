@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Clock.scss";
 import Sun from "../../assets/svg/sun.svg";
 import Moon from "../../assets/svg/moon.svg";
@@ -8,6 +8,7 @@ import Pannel from "../Pannel/Pannel";
 
 const Clock = () => {
   const [open, setOpen] = useState(false);
+  const [time, setTime] = useState("");
 
   const D = new Date();
   const Hours = D.getHours();
@@ -37,6 +38,30 @@ const Clock = () => {
   const monthIndex = D.getMonth();
   const monthName = monthNames[monthIndex];
 
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setTime("Morning");
+    } else if (hour < 16) {
+      setTime("Afternoon");
+    } else if (hour < 18) {
+      setTime("Evening");
+    } else {
+      setTime("Night");
+    }
+  }, []);
+
+  let Greeting;
+  if (time === "Morning") {
+    Greeting = "Morning";
+  } else if (time === "Afternoon") {
+    Greeting = "Afternoon";
+  } else if (time === "Evening") {
+    Greeting = "Evening";
+  } else {
+    Greeting = "Night";
+  }
+
   return (
     <div className="clock">
       <div className="left">
@@ -46,7 +71,7 @@ const Clock = () => {
           ) : (
             <img src={Sun} alt="sun_img" />
           )}
-          {Hours >= 20 ? <p>Good Night,</p> : <p>Good Morning,</p>}
+          {<p>Good {Greeting}</p>}
           <span>IT'S CURRENTLY</span>
         </div>
         <div className="center">

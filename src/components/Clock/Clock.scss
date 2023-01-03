@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@300;400&family=Text+Me+One&family=Wire+One&display=swap");
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
 .clock {
   width: 100%;
   display: flex;
@@ -10,11 +23,26 @@
   z-index: 99;
   font-family: "Lexend", sans-serif;
 
+  @include mobile {
+    flex-direction: column;
+    padding: 10px;
+    top: 30%;
+  }
+
+  @include tablet {
+    padding: 10px 100px;
+  }
+
   .left {
     flex: 4;
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include mobile {
+      flex: 1;
+      gap: 10px;
+    }
 
     .top {
       display: flex;
@@ -25,10 +53,18 @@
       p {
         font-size: 12px;
         letter-spacing: 0.2rem;
+
+        @include mobile {
+          letter-spacing: normal;
+        }
       }
       span {
         font-size: 1rem;
         letter-spacing: 0.2rem;
+
+        @include mobile {
+          letter-spacing: normal;
+        }
       }
     }
     .center {
@@ -38,18 +74,31 @@
       gap: 10px;
       width: 100%;
 
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+
       span {
         font-size: 6rem;
       }
 
       p {
         letter-spacing: 0.2rem;
+
+        @include mobile {
+          letter-spacing: normal;
+        }
       }
     }
     .bottom {
       p {
         font-size: 12px;
         letter-spacing: 0.2rem;
+
+        @include mobile {
+          letter-spacing: normal;
+        }
       }
     }
   }
@@ -62,11 +111,23 @@
     justify-content: flex-end;
     gap: 30px;
 
+    @include mobile {
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      margin-top: 20px;
+    }
+
     span {
       width: 100%;
       font-size: 2rem;
       font-family: "Text Me One", sans-serif;
       text-align: end;
+
+      @include mobile {
+        text-align: center;
+      }
     }
 
     button {
@@ -83,6 +144,14 @@
       align-items: center;
       justify-content: space-around;
       z-index: 9999;
+
+      @include mobile {
+        width: 50%;
+      }
+
+      @include tablet() {
+        width: 70%;
+      }
     }
   }
 }

@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@300;400&family=Text+Me+One&family=Wire+One&display=swap");
 
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
 .quotes {
   position: relative;
   top: 10%;
@@ -12,16 +23,32 @@
   gap: 20px;
   z-index: 99;
 
+  @include mobile {
+    top: 5%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
+
   .top {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include mobile {
+      gap: 5px;
+    }
 
     h4 {
       font-family: "Text Me One", sans-serif;
       color: white;
       font: 12px;
       letter-spacing: 0.2rem;
+
+      @include mobile {
+        letter-spacing: normal;
+      }
     }
 
     img {
@@ -34,5 +61,10 @@
     color: white;
     font-size: 1.4rem;
     letter-spacing: 0.2rem;
+
+    @include mobile {
+      font-size: 1rem;
+      letter-spacing: normal;
+    }
   }
 }
