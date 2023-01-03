@@ -10,7 +10,7 @@ function App() {
     const hour = new Date().getHours();
     if (hour < 12) {
       setTimeofDay("morning");
-    } else if (hour < 18) {
+    } else if (hour < 16) {
       setTimeofDay("afternoon");
     } else if (hour < 20) {
       setTimeofDay("evening");
@@ -26,12 +26,12 @@ function App() {
   } else if (timeofDay === "afternoon") {
     backgroundUrl =
       "https://images.unsplash.com/photo-1535477904881-7dfea0fb80c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80";
-  } else if (timeofDay === "night") {
-    backgroundUrl =
-      "https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80";
-  } else {
+  } else if (timeofDay === "evening") {
     backgroundUrl =
       "https://images.pexels.com/photos/219998/pexels-photo-219998.jpeg";
+  } else {
+    backgroundUrl =
+      "https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80";
   }
 
   return (
