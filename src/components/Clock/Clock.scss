@@ -1,0 +1,88 @@
+.clock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  color: white;
+  position: absolute;
+  top: 60%;
+  padding: 10px 150px;
+  z-index: 99;
+  font-family: "Lexend", sans-serif;
+
+  .left {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+
+      p {
+        font-size: 12px;
+        letter-spacing: 0.2rem;
+      }
+      span {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+    .center {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 10px;
+      width: 100%;
+
+      span {
+        font-size: 6rem;
+      }
+
+      p {
+        letter-spacing: 0.2rem;
+      }
+    }
+    .bottom {
+      p {
+        font-size: 12px;
+        letter-spacing: 0.2rem;
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 30px;
+
+    span {
+      width: 100%;
+      font-size: 2rem;
+      font-family: "Text Me One", sans-serif;
+      text-align: end;
+    }
+
+    button {
+      width: 25%;
+      border: none;
+      background-color: white;
+      border-radius: 30px;
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 9999;
+    }
+  }
+}

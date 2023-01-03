@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@300;400&family=Text+Me+One&family=Wire+One&display=swap");
+
+.quotes {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 70%;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 99;
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h4 {
+      font-family: "Text Me One", sans-serif;
+      color: white;
+      font: 12px;
+      letter-spacing: 0.2rem;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .author {
+    font-family: "Koulen", cursive;
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+  }
+}
